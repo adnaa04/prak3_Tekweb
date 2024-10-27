@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Optional: You can create a separate CSS file if needed -->
+    <script src="script.js" defer></script>
+    <!-- Link to the external JavaScript file -->
+    <style>
+      body {
+        font-family: sans-serif;
+        transition: background-color 0.3s, color 0.3s; /* Smooth transition for color changes */
+      }
+
+      .container {
+        width: 350px;
+        margin: 0 auto;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+        box-sizing: border-box;
+      }
+
+      #taskList {
+        list-style: none;
+        padding: 0;
+      }
+
+      #taskList li {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .close {
+        color: red;
+        float: right;
+        cursor: pointer;
+      }
+
+      .completed {
+        text-decoration: line-through;
+        color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>My To-Do List</h2>
+      <input type="text" id="newTask" placeholder="Add a new task..." />
+      <button onclick="addTask()">Add</button>
+
+      <ul id="taskList"></ul>
+
+      <hr />
+
+      <h3>Settings</h3>
+      <label for="bgColor">Change Background Color:</label>
+      <select id="bgColor" onchange="changeBackgroundColor(this.value)">
+        <option value="">Default</option>
+        <option value="lightblue">Light Blue</option>
+        <option value="lightgreen">Light Green</option>
+        <option value="lightcoral">Light Coral</option>
+      </select>
+
+      <br />
+
+      <label for="fontSize">Change Font Size:</label>
+      <button onclick="changeFontSize(2)">Increase</button>
+      <button onclick="changeFontSize(-2)">Decrease</button>
+
+      <br />
+
+      <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+      <button onclick="toggleFontStyle()">Toggle FontStyle</button>
+    </div>
+  </body>
+</html>
